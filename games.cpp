@@ -1,9 +1,11 @@
 #include <iostream>
-#include <algorithm>
 #include <string>
 #include <ctime>
 using namespace std;
+
+//define new games 
 #define GTW 1
+
 void guessTheWord(){
     srand(time(0));
     const int n=5;
@@ -16,7 +18,6 @@ void guessTheWord(){
 
     cout << "Loja Guess The Word ka filluar!" << endl;
 
-    
     while (attempts > 0 && guessedWord != wordToGuess) {
         cout << "\nFjala: " << guessedWord << endl;
         cout << "Edhe: " << attempts <<" mundesi te mbetura" << endl;
@@ -24,7 +25,6 @@ void guessTheWord(){
         cout << "Zgjedhe nje shkronje: ";
         char guess;
         cin >> guess;
-
         bool correct = false;
         for (int i = 0; i < wordToGuess.length();i++) {
             if (wordToGuess[i] == guess && guessedWord[i] == '_') {
@@ -33,9 +33,9 @@ void guessTheWord(){
             }
         }
 
-        if (!correct) {
-            wrongLetters += guess;
-            attempts--;
+        if (!correct) { 
+            wrongLetters += guess;//nese guess eshte wrong e shtojme shkronjen ne wrong letters
+            attempts--;//zbresim mundesite per nje
         }
     }
 
@@ -44,14 +44,18 @@ void guessTheWord(){
     } else {
         cout << "\nLoja ka mbaruar! Fjala ishte: " << wordToGuess << endl;
     }
-
 }
 
 int main(){
     int pickGame;
+    //update this when adding new game
     const int numberOfGames=1;
     cout<<"Zgjedhe lojen: 1.Guess the word ";
     cin>>pickGame;
+    while (pickGame>numberOfGames||pickGame<0)
+    {
+        cout<<"Zgjedhje nje numer nga 1 deri ne "<<numberOfGames;
+    }
     switch (pickGame)
     {
     case GTW:
