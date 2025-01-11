@@ -5,9 +5,40 @@ using namespace std;
 
 //define new games 
 #define GTW 1
+#define GTN 2
 
+
+void guessTheNumber() {
+    srand(time(0));  
+    int randomNumber = rand() % 100 + 1; 
+    int guess;
+    int maxAttempts = 7;
+
+    cout << "Loja Guess the Number filloi! Zgjedhe nje numer prej 1 deri ne 100." << endl;
+
+    while (maxAttempts > 0) {
+        cout << "\nKeni dhe " << maxAttempts << " mundesi. Zgjedhe numrin: ";
+        cin >> guess;
+
+        if (guess == randomNumber) {
+            cout << "Urime numri i sakte eshte: " << randomNumber << endl;
+            return;
+        } 
+        else if (guess > randomNumber) {
+            cout << "Me poshte.";
+        } 
+        else {
+            cout << "Me larte.";
+        }
+
+        maxAttempts--;
+    }
+
+    cout << "\nLoja mbaroi! Numri i sakte ishte : " << randomNumber << endl;
+}
 void guessTheWord(){
     srand(time(0));
+    int x;
     const int n=5;
     string words[n] = {"programim", "elektronike", "sinjale", "matematike", "vegla"};
     
@@ -46,11 +77,12 @@ void guessTheWord(){
     }
 }
 
+
 int main(){
     int pickGame;
     //update this when adding new game
-    const int numberOfGames=1;
-    cout<<"Zgjedhe lojen: 1.Guess the word ";
+    const int numberOfGames=2;
+    cout<<"Zgjedhe lojen: 1.Guess the word, 2.Guess the number ";
     cin>>pickGame;
     while (pickGame>numberOfGames||pickGame<0)
     {
@@ -60,6 +92,10 @@ int main(){
     {
     case GTW:
        guessTheWord();
+        break;
+    
+    case GTN:
+       guessTheNumber();
         break;
     
     default:
