@@ -1,11 +1,15 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <vector>
+#include <cstdlib>
+
 using namespace std;
 
 //define new games 
 #define GTW 1
 #define GTN 2
+#define MBG 3
 
 
 void guessTheNumber() {
@@ -77,12 +81,38 @@ void guessTheWord(){
     }
 }
 
+void magic8Ball() {
+    // kjo loje i thote userit me jep nje pyetje me pergjigje "po, jo" dhe ia kthen pergjigjen
+
+    vector<string> pergjigjet = {
+        "Po, sigurishte!",
+        "Padyshim.",
+        "Me shume gjase.",
+        "Po!",
+        "Pyet perseri me vone.",
+        "Me mire te mos e dish tani.",
+        "Nuk mund ta di tani.",
+        "Mos mbaj shume shprese.",
+        "Burimet e mia te informacionit thone jo.",
+        "Shume e dyshimte."
+    };
+
+    string pyetje;
+
+    cout << "Mire se vini ne Magic 8-Ball! Beni nje pyetje po/jo: ";
+    cin.ignore(); 
+    getline(cin, pyetje);
+
+    int index = rand() % pergjigjet.size();
+
+    cout << "Pergjigja eshte: " << pergjigjet[index] << endl;
+}
 
 int main(){
     int pickGame;
     //update this when adding new game
-    const int numberOfGames=2;
-    cout<<"Zgjedhe lojen: 1.Guess the word, 2.Guess the number ";
+    const int numberOfGames=3;
+    cout<<"Zgjedhe lojen: 1.Guess the word, 2.Guess the number, 3. Magic 8 Ball ";
     cin>>pickGame;
     while (pickGame>numberOfGames||pickGame<0)
     {
@@ -96,6 +126,9 @@ int main(){
     
     case GTN:
        guessTheNumber();
+        break;
+    case MBG:
+       magic8Ball();
         break;
     
     default:
