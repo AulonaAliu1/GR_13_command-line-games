@@ -11,9 +11,7 @@ using namespace std;
 #define GTN 2
 #define MBG 3
 
-
 void guessTheNumber() {
-    srand(time(0));  
     int randomNumber = rand() % 100 + 1; 
     int guess;
     int maxAttempts = 7;
@@ -41,7 +39,6 @@ void guessTheNumber() {
     cout << "\nLoja mbaroi! Numri i sakte ishte : " << randomNumber << endl;
 }
 void guessTheWord(){
-    srand(time(0));
     int x;
     const int n=5;
     string words[n] = {"programim", "elektronike", "sinjale", "matematike", "vegla"};
@@ -109,6 +106,7 @@ void magic8Ball() {
 }
 
 int main(){
+    srand(time(0));  
     int pickGame;
     //update this when adding new game
     const int numberOfGames=3;
