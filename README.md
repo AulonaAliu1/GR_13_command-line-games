@@ -12,13 +12,13 @@ Teknologjitë e Përdorura
 •	Menaxhimi i kodit: Git & GitHub
 
 Instalimi dhe Ekzekutimi
-1.	Klononi repozitorin:
-git clone https://github.com/emri-i-repozitorit
-2.	Hyni në direktorinë e projektit:
+1.	Klononi repozitorin: psh
+git clone https://github.com/ "emri-i-repozitorit"
+3.	Hyni në direktorinë e projektit:
 cd lojera-ne-cmd
-3.	Kompiloni kodin:
+4.	Kompiloni kodin:
 g++ main.cpp -o lojera
-4.	Ekzekutoni programin: 
+5.	Ekzekutoni programin: 
 ./lojera
 
 Si të kontribuoni
