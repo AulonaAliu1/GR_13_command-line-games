@@ -11,6 +11,29 @@ using namespace std;
 #define GTN 2
 #define MBG 3
 
+int Sillezarin() {
+    return rand() % 6 + 1;
+}
+
+void Zaret() {
+    srand(time(0)); 
+    char Zgjidhja;
+    cout << "Miresevini ne lojen e zareve!" << endl;
+
+    do {
+        int Zari1 = Sillezarin();
+        int Zari2 = Sillezarin();
+
+        cout << "Ke hedhur: " << Zari1 << " dhe " << Zari2 << "." << endl;
+        cout << "Totali: " << Zari1 + Zari2 << endl;
+
+        cout << "A deshiron te hedhesh serish? (s per po, cdo gje tjeter per jo): ";
+        cin >> Zgjidhja;
+
+    } while (Zgjidhja == 's' || Zgjidhja == 'S');
+
+    cout << "Faleminderit qe luajte! Mire u pafshim." << endl;
+}
 
 void guessTheNumber() {
     srand(time(0));  
@@ -132,6 +155,7 @@ int main(){
         break;
     
     default:
+    guessTheNumber();
         break;
     }
     return 0;
