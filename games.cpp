@@ -10,7 +10,30 @@ using namespace std;
 #define GTW 1
 #define GTN 2
 #define MBG 3
+#define DCG 4
+int Sillezarin() {
+    return rand() % 6 + 1;
+}
 
+void Zaret() {
+    srand(time(0)); 
+    char Zgjidhja;
+    cout << "Miresevini ne lojen e zareve!" << endl;
+
+    do {
+        int Zari1 = Sillezarin();
+        int Zari2 = Sillezarin();
+
+        cout << "Ke hedhur: " << Zari1 << " dhe " << Zari2 << "." << endl;
+        cout << "Totali: " << Zari1 + Zari2 << endl;
+
+        cout << "A deshiron te hedhesh serish? (s per po, cdo gje tjeter per jo): ";
+        cin >> Zgjidhja;
+
+    } while (Zgjidhja == 's' || Zgjidhja == 'S');
+
+    cout << "Faleminderit qe luajte! Mire u pafshim." << endl;
+}
 void guessTheNumber() {
     int randomNumber = rand() % 100 + 1; 
     int guess;
@@ -109,12 +132,12 @@ int main(){
     srand(time(0));  
     int pickGame;
     //update this when adding new game
-    const int numberOfGames=3;
-    cout<<"Zgjedhe lojen: 1.Guess the word, 2.Guess the number, 3. Magic 8 Ball ";
+    const int numberOfGames=4;
+    cout<<"Zgjedhe lojen: 1.Guess the word, 2.Guess the number, 3. Magic 8 Ball , 4. Dice";
     cin>>pickGame;
     while (pickGame>numberOfGames||pickGame<0)
     {
-        cout<<"Zgjedhje nje numer nga 1 deri ne "<<numberOfGames;
+        cout<<"Zgjedhje nje numer nga 1 deri ne 4"<<numberOfGames;
     }
     switch (pickGame)
     {
@@ -128,8 +151,9 @@ int main(){
     case MBG:
        magic8Ball();
         break;
-    
-    default:
+    case DCG: Zaret();
+    break;
+    default: cout<<"Kjo loje nuk egziston";
         break;
     }
     return 0;
