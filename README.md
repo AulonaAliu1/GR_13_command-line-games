@@ -6,7 +6,7 @@ Lojërat e disponueshme
 1.	Guess The Number - Përdoruesi duhet të gjejë një numër të rastësishëm nga 1 deri në 100 brenda 7 tentimeve.
 2.	Guess The Word - Përdoruesi duhet të gjejë një fjalë të fshehur duke propozuar shkronja.
 3.	Magic 8-Ball - Një lojë argëtuese që kthen një përgjigje të rastësishme ndaj një pyetjeje "po/jo".
-
+4.  Dice- Lojë me zare ku përdoruesi hedh dy zare dhe sheh rezultatin. Përdoruesi mund të zgjedhë të hedhë zaret përsëri ose të ndalojë lojën.
 Teknologjitë e Përdorura
 •	Gjuhë programimi: C++
 •	Menaxhimi i kodit: Git & GitHub
